@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>My Cafe - Modern Cafe Menu</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 w-full bg-background border-b border-border shadow-sm transition-all duration-300"
+    >
+      <div
+        style="
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 0 1rem;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <div>
+          <a
+            href="#hero"
+            style="
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: var(--primary);
+              text-decoration: none;
+            "
+          >
+            My Cafe
+          </a>
+        </div>
+
+        <nav style="display: flex; gap: 2rem">
+          <a
+            href="#hero"
+            style="
+              color: var(--foreground);
+              text-decoration: none;
+              transition: color 0.2s ease;
+            "
+            >Home</a
+          >
+          <a
+            href="#menu"
+            style="
+              color: var(--foreground);
+              text-decoration: none;
+              transition: color 0.2s ease;
+            "
+            >Menu</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      style="
+        background: linear-gradient(
+          to bottom,
+          color-mix(in oklch, var(--accent) 10%, transparent),
+          var(--background)
+        );
+        padding: 4rem 1rem;
+        text-align: center;
+      "
+    >
+      <div style="max-width: 80rem; margin: 0 auto">
+        <h1
+          style="
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: bold;
+            color: var(--foreground);
+            margin-bottom: 1rem;
+          "
+        >
+          Discover Our Seasonal Flavors
+        </h1>
+        <p
+          style="
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Welcome to My Cafe, where contemporary cuisine meets warm hospitality.
+          Explore our carefully curated menu.
+        </p>
+        <a
+          href="#menu"
+          style="
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            border-radius: calc(var(--radius));
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+          "
+        >
+          View Menu
+        </a>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" style="padding: 4rem 1rem">
+      <div style="max-width: 80rem; margin: 0 auto">
+        <h2
+          style="
+            font-size: clamp(1.875rem, 5vw, 2.25rem);
+            font-weight: bold;
+            text-align: center;
+            color: var(--foreground);
+            margin-bottom: 3rem;
+          "
+        >
+          Our Menu
+        </h2>
+
+        <!-- Filter and Search -->
+        <div style="margin-bottom: 3rem">
+          <!-- Filter Buttons -->
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.75rem;
+              justify-content: center;
+              margin-bottom: 1rem;
+            "
+          >
+            <button
+              class="filter-btn"
+              data-filter="All"
+              style="
+                padding: 0.5rem 1.5rem;
+                background-color: var(--primary);
+                color: var(--primary-foreground);
+                border-radius: 9999px;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                active: true;
+              "
+            >
+              All
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="Appetizers"
+              style="
+                padding: 0.5rem 1.5rem;
+                background-color: var(--muted);
+                color: var(--muted-foreground);
+                border-radius: 9999px;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+              "
+            >
+              Appetizers
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="Main Courses"
+              style="
+                padding: 0.5rem 1.5rem;
+                background-color: var(--muted);
+                color: var(--muted-foreground);
+                border-radius: 9999px;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+              "
+            >
+              Main Courses
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="Desserts"
+              style="
+                padding: 0.5rem 1.5rem;
+                background-color: var(--muted);
+                color: var(--muted-foreground);
+                border-radius: 9999px;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+              "
+            >
+              Desserts
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="Beverages"
+              style="
+                padding: 0.5rem 1.5rem;
+                background-color: var(--muted);
+                color: var(--muted-foreground);
+                border-radius: 9999px;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+              "
+            >
+              Beverages
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div style="max-width: 28rem; margin: 0 auto">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search menu items..."
+              style="
+                width: 100%;
+                padding: 0.5rem 1rem;
+                border: 1px solid var(--border);
+                border-radius: calc(var(--radius));
+                background-color: var(--input);
+                color: var(--foreground);
+                outline: none;
+                transition: all 0.2s ease;
+              "
+            />
+          </div>
+        </div>
+
+        <!-- Menu Grid -->
+        <div
+          id="menu-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+          "
+        >
+          <!-- Menu items will be inserted here by JavaScript -->
+        </div>
+
+        <!-- No Results Message -->
+        <div
+          id="no-results"
+          style="display: none; text-align: center; padding: 3rem 1rem"
+        >
+          <p style="font-size: 1.125rem; color: var(--muted-foreground)">
+            No items found. Try adjusting your search.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="menu-modal">
+      <div id="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title"></h2>
+          <button
+            id="modal-close"
+            class="modal-close"
+            aria-label="Close modal"
+            type="button"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              style="width: 1.5rem; height: 1.5rem"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <img
+            id="modal-image"
+            src=""
+            alt=""
+            style="
+              width: 100%;
+              height: 24rem;
+              object-fit: cover;
+              border-radius: calc(var(--radius) + 4px);
+            "
+          />
+
+          <div class="modal-description-section" style="margin-top: 1rem">
+            <h3>Description</h3>
+            <p id="modal-description"></p>
+          </div>
+
+          <div class="modal-footer">
+            <span
+              id="modal-price"
+              style="
+                font-size: 1.875rem;
+                font-weight: bold;
+                color: var(--primary);
+              "
+            ></span>
+            <button
+              id="modal-order-btn"
+              style="
+                padding: 0.75rem 1.5rem;
+                background-color: var(--accent);
+                color: var(--accent-foreground);
+                border-radius: calc(var(--radius));
+                font-weight: 600;
+                border: none;
+                cursor: pointer;
+                transition: opacity 0.2s ease;
+              "
+              type="button"
+            >
+              Add to Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+        padding: 3rem 1rem;
+      "
+    >
+      <div style="max-width: 80rem; margin: 0 auto">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+          "
+        >
+          <div>
+            <h3
+              style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem"
+            >
+              My Cafe
+            </h3>
+            <p style="font-size: 0.875rem; opacity: 0.9">
+              Modern cafe serving contemporary cuisine with a warm, inviting
+              atmosphere.
+            </p>
+          </div>
+
+          <div>
+            <h4 style="font-weight: 600; margin-bottom: 1rem">Hours</h4>
+            <ul
+              style="
+                font-size: 0.875rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+              "
+            >
+              <li style="opacity: 0.9; margin-bottom: 0.5rem">
+                Mon - Thu: 11am - 10pm
+              </li>
+              <li style="opacity: 0.9; margin-bottom: 0.5rem">
+                Fri - Sat: 11am - 11pm
+              </li>
+              <li style="opacity: 0.9">Sun: 10am - 9pm</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="font-weight: 600; margin-bottom: 1rem">Contact</h4>
+            <ul
+              style="
+                font-size: 0.875rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+              "
+            >
+              <li style="opacity: 0.9; margin-bottom: 0.5rem">
+                <a
+                  href="tel:+1234567890"
+                  style="
+                    color: var(--primary-foreground);
+                    text-decoration: none;
+                  "
+                  >+1 (234) 567-890</a
+                >
+              </li>
+              <li style="opacity: 0.9; margin-bottom: 0.5rem">
+                <a
+                  href="mailto:hello@mycafe.com"
+                  style="
+                    color: var(--primary-foreground);
+                    text-decoration: none;
+                  "
+                  >hello@mycafe.com</a
+                >
+              </li>
+              <li style="opacity: 0.9">
+                456 Culinary Lane<br />Flavor City, FC 12345
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          style="
+            border-top: 1px solid
+              color-mix(in oklch, var(--primary-foreground) 20%, transparent);
+            padding-top: 2rem;
+            margin-top: 2rem;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 1rem;
+              font-size: 0.875rem;
+              opacity: 0.75;
+            "
+          >
+            <p>&copy; 2026 My Cafe. All rights reserved.</p>
+            <div style="display: flex; gap: 1.5rem">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: var(--primary-foreground); text-decoration: none"
+                >Facebook</a
+              >
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: var(--primary-foreground); text-decoration: none"
+                >Instagram</a
+              >
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: var(--primary-foreground); text-decoration: none"
+                >Twitter</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
